@@ -9,10 +9,30 @@
 8. Permitir salir del programa
 */
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Estudiante { //creacion de la clase estudiante con sus atributos
+    String nombre;
+    int edad;
+    double nota;
+
+    Estudiante(String nombre, int edad, double nota) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.nota = nota;
+    }
+
+    public String toString() {
+        return "Nombre: "+nombre+", Edad: "+edad+", Nota: "+nota;
+    }
+}
+
 class void main() {
 
     public static void main(String[] args) {
 
-        
+
+
     }
 }
