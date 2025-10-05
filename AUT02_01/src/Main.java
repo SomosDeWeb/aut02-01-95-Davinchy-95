@@ -124,6 +124,9 @@ class void main() {
                     break;
 
                 case 6:
+                    // salir del programa
+                    System.out.println("Saliendo del programa, vuelva pronto.");
+                    break;
 
                 default:
                     System.out.println("Opción no válida.");
