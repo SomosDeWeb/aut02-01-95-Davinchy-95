@@ -66,7 +66,6 @@ class void main() {
                     estudiantes.add(new Estudiante(nombre, edad, nota)); // agregamos a la lista
 
                     System.out.println("Estudiante añadido correctamente.");
-
                     break;
 
                 case 2:
@@ -77,7 +76,6 @@ class void main() {
                     for (Estudiante e : estudiantes) {
                         System.out.println(e);
                     }
-
                     break;
 
                 case 3:
@@ -99,7 +97,6 @@ class void main() {
                     if (!encontrado) {
                         System.out.println("No se pudo encontrar el estudiante.");
                     }
-
                     break;
 
                 case 4:
@@ -112,10 +109,20 @@ class void main() {
                         double media = calcularMedia(estudiantes);
                         System.out.println("LA media de la nota es: " + media);
                     }
-
                     break;
 
                 case 5:
+                    // mostramos al estudiante con la mejor calificacion.
+
+                    if (estudiantes.size() == 0) {
+                        System.out.println("No hay estudiantes registrados.");
+                    } else {
+
+                        Estudiante mejorNota = mejorEstudiante(estudiantes);
+                        System.out.println("El estudiante con mejor nota es: " + mejorNota);
+                    }
+                    break;
+
                 case 6:
 
                 default:
@@ -133,8 +140,20 @@ class void main() {
         double suma = 0;
         for (Estudiante e : estudiantes) {
             suma += e.nota;
-        }
+        } // es lo mismo que ( media = sumarTodasLasNotas / numeroDeNotas )
         return suma / estudiantes.size();
-    } // es lo mismo que ( media = sumarTodasLasNotas / numeroDeNotas )
+    }
 
+
+    // Funcion para buscar el estudiante con la mejor nota
+    public static Estudiante mejorEstudiante(ArrayList<Estudiante> estudiantes) {
+
+        Estudiante mejor = estudiantes.get(0);
+        for (Estudiante e : estudiantes) {
+            if (e.nota > mejor.nota) {
+                mejor = e;
+            }
+        }
+        return mejor;
+    }
 }
