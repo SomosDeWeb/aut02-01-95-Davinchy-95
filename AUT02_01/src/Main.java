@@ -81,6 +81,27 @@ class void main() {
                     break;
 
                 case 3:
+
+                    // buscamos el estudiante
+                    System.out.print("Nombre a buscar: ");
+                    String buscar = save.nextLine();
+
+                    boolean encontrado = false;
+
+                    // buscamos nombre de estudiantre dentro de la lista ignorando mayuscula o miniscula
+                    for (Estudiante e : estudiantes) {
+                        if (e.nombre.equalsIgnoreCase(buscar)) {
+                            System.out.println("Encontrado: " + e);
+                            encontrado = true;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        System.out.println("No se pudo encontrar el estudiante.");
+                    }
+
+                    break;
+
                 case 4:
                 case 5:
                 case 6:
