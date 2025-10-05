@@ -28,7 +28,7 @@ class Estudiante { //creacion de la clase estudiante con sus atributos
     }
 }
 
-class void main() {
+public class Main {
 
     public static void main(String[] args) {
 
