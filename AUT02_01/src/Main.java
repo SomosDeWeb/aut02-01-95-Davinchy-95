@@ -40,12 +40,12 @@ class void main() {
 
             // Marcamos un numero para cada accion
             System.out.println("\n--- Abrir menu de gestor de Estudiantes ---");
-            System.out.println("1. Añadir una nuevo estudiante");
-            System.out.println("2. Listar todos los estudiantes");
-            System.out.println("3. Buscar un estudiante por nombre");
-            System.out.println("4. Calcular la media de notas");
-            System.out.println("5. Mostrar un estudiante con mejor nota");
-            System.out.println("6. Salir");
+            System.out.println("marca 1: Añadir una nuevo estudiante");
+            System.out.println("marca 2: Listar todos los estudiantes");
+            System.out.println("marca 3: Buscar un estudiante por nombre");
+            System.out.println("marca 4: Calcular la media de notas");
+            System.out.println("marca 5: Mostrar un estudiante con mejor nota");
+            System.out.println("marca 6: Salir");
             System.out.print("Por favor , elige una opción: ");
             opcion = Integer.parseInt(save.nextLine());
 
@@ -103,6 +103,18 @@ class void main() {
                     break;
 
                 case 4:
+
+                    // calculamos media de la nota
+                    if (estudiantes.size() == 0) {
+                        System.out.println("No hay estudiantes registrados.");
+
+                    } else {
+                        double media = calcularMedia(estudiantes);
+                        System.out.println("LA media de la nota es: " + media);
+                    }
+
+                    break;
+
                 case 5:
                 case 6:
 
@@ -115,4 +127,14 @@ class void main() {
 
         save.close();
     }
+
+    // Funcion para calcular la media de las notas
+    public static double calcularMedia(ArrayList<Estudiante> estudiantes) {
+        double suma = 0;
+        for (Estudiante e : estudiantes) {
+            suma += e.nota;
+        }
+        return suma / estudiantes.size();
+    } // es lo mismo que ( media = sumarTodasLasNotas / numeroDeNotas )
+
 }
